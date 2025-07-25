@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto('https://www.saucedemo.com');
 });
 
 test.describe('Testes de login', () => {

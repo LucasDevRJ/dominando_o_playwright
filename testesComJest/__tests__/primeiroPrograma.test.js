@@ -36,6 +36,21 @@ describe('Post', () => {
 
     }, 60000)
 
+    test.jestPlaywrightSkip({ browsers: ["webkit", "firefox"] }, 'Terceiro Teste', async () => {
+        await page.goto('https://the-internet.herokuapp.com/');
+        const title = await page.title();
+        expect(title).toBe('The Internet');
+
+        await page.click('#content > ul > li:nth-child(11) > aaaa');
+
+        const h3 = await page.innerHTML('#content > div > h3');
+        expect(h3).toBe('Dropdown List');
+
+        await page.selectOption('#dropdown', '2');
+
+        console.log('Execução do terceiro teste');
+    }, 60000)
+
     afterAll(async () => {
         console.log('After All');
     });

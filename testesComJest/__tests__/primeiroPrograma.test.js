@@ -41,7 +41,7 @@ describe('Post', () => {
         const title = await page.title();
         expect(title).toBe('The Internet');
 
-        await page.click('#content > ul > li:nth-child(11) > aaaa');
+        await page.click('#content > ul > li:nth-child(11) > a');
 
         const h3 = await page.innerHTML('#content > div > h3');
         expect(h3).toBe('Dropdown List');

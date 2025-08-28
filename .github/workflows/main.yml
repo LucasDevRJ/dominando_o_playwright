@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest # or macos-latest, windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Modules consistency
+        run: sudo rm -rf node_modules    
+      - name: Install dependencies
+        run: npm install && npx playwright install
+      - name: Run your tests
+        run: npm test

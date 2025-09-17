@@ -11,7 +11,7 @@ const config = {
         video: 'on', // 'on', 'off', 'retain-on-failure', 'on-first-retry'
         trace: 'on', // 'on', 'off', 'retain-on-failure', 'on-first-retry'
     },
-    testDir: './test',
+    testDir: './tests',
     retries: 2,
     timeout: 60000,
     projects: [
